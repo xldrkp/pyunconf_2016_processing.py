@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Axel Dürkop, TUHH">
+  <title>Processing.py and Arduino</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./bower_components/reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="./bower_components/reveal.js/css/theme/sky.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? './bower_components/reveal.js/css/print/pdf.css' : './bower_components/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="./bower_components/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Processing.py and Arduino</h1>
+  <h2 class="author">Axel Dürkop, TUHH</h2>
+  <h3 class="date">Pyunconf Sep 10, 2016</h3>
+</section>
+
+<section><section id="learning-python-with-processing" class="titleslide slide level1"><h1>Learning Python with Processing</h1></section><section id="processing" class="slide level2">
+<h1>Processing</h1>
+<ul>
+<li>https://processing.org/</li>
+<li>IDE for easily developing artistic programms</li>
+<li>Code usually being compiled to Java</li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="./abb/ide.png" alt="Processing IDE" /><figcaption>Processing IDE</figcaption>
+</figure>
+</section><section id="processing.py" class="slide level2">
+<h1>Processing.py</h1>
+<ul>
+<li>Python is a <em>mode</em> in Processing</li>
+</ul>
+<figure>
+<img src="./abb/mode-installieren-1.png" alt="Installing Python mode" /><figcaption>Installing Python mode</figcaption>
+</figure>
+</section><section id="almost-the-best-of-two-worlds" class="slide level2">
+<h1>(Almost) the best of two worlds</h1>
+<ul>
+<li>Lots of Processing libraries can be used</li>
+<li>Main Python packages can be used</li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="./abb/lib-library-hinzufuegen.png" alt="Choosing a library" /><figcaption>Choosing a library</figcaption>
+</figure>
+</section><section class="slide level2">
+
+<figure>
+<img src="./abb/lib-libraries-laden.png" alt="Install it, if not already" /><figcaption>Install it, if not already</figcaption>
+</figure>
+</section><section class="slide level2">
+
+<figure>
+<img src="./abb/lib-importiert.png" alt="Import it" /><figcaption>Import it</figcaption>
+</figure>
+</section><section id="processing.py-example" class="slide level2">
+<h1>Processing.py Example</h1>
+<figure>
+<img src="./abb/Auswahl_106.png" alt="The two main functions" /><figcaption>The two main functions</figcaption>
+</figure>
+</section></section>
+<section><section id="arduino" class="titleslide slide level1"><h1>Arduino</h1></section><section id="hardware" class="slide level2">
+<h1>Hardware</h1>
+<figure>
+<img src="./abb/arduino-uno-flickr-snootlab.jpg" alt="Arduino Uno Board, Arduino Uno by Snootlab CC-BY 2.0" /><figcaption>Arduino Uno Board, Arduino Uno by <a href="https://www.flickr.com/photos/snootlab/">Snootlab</a> <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY 2.0</a></figcaption>
+</figure>
+</section><section class="slide level2">
+
+<figure>
+<img src="./abb/arduino_ide.png" alt="Arduino IDE" /><figcaption>Arduino IDE</figcaption>
+</figure>
+</section><section id="blink" class="slide level2">
+<h1>Blink</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">byte</span> led = <span class="dv">13</span>;
+
+<span class="dt">void</span> <span class="fu">setup</span>() {
+  <span class="fu">pinMode</span>(led, OUTPUT);
+}
+
+<span class="dt">void</span> <span class="fu">loop</span>() {
+  <span class="fu">digitalWrite</span>(led, HIGH);  
+  <span class="fu">delay</span>(<span class="dv">1000</span>);         
+  <span class="fu">digitalWrite</span>(led, LOW);
+  <span class="fu">delay</span>(<span class="dv">1000</span>);
+}</code></pre></div>
+</section><section id="blink-1" class="slide level2">
+<h1>Blink</h1>
+<figure>
+<img src="./abb/blink.gif" alt="After compiling and uploading" /><figcaption>After compiling and uploading</figcaption>
+</figure>
+</section><section id="firmata" class="slide level2">
+<h1>Firmata</h1>
+<blockquote>
+<p>&quot;Firmata is a protocol for communicating with microcontrollers from software on a host computer. (https://github.com/firmata/arduino)&quot;</p>
+</blockquote>
+<ul>
+<li><strong>StandardFirmata</strong> is a preinstalled library in the Arduino IDE</li>
+</ul>
+</section><section id="firmata-1" class="slide level2">
+<h1>Firmata</h1>
+<ul>
+<li>Once transfered like a normal sketch to the Arduino</li>
+<li>Serial communication (via USB) from the host computer using Processing.py</li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="./abb/workflow.png" alt="Communication with Arduino" /><figcaption>Communication with Arduino</figcaption>
+</figure>
+</section><section id="api" class="slide level2">
+<h1>API</h1>
+<ul>
+<li><code>list()</code></li>
+<li><code>pinMode(pin, mode)</code></li>
+<li><code>digitalRead(pin)</code></li>
+<li><code>digitalWrite(pin, value)</code></li>
+<li><code>analogRead(pin)</code></li>
+<li><code>analogWrite(pin, value)</code></li>
+<li><code>servoWrite(pin, value)</code></li>
+</ul>
+</section></section>
+<section><section id="why-not-pygame" class="titleslide slide level1"><h1>Why not PyGame?</h1></section><section id="pygame" class="slide level2">
+<h1>PyGame</h1>
+<p>First line is the import of a library</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys, pygame
+pygame.init()</code></pre></div>
+</section><section id="processing.py-1" class="slide level2">
+<h1>Processing.py</h1>
+<p>First success comes with one, two line(s) of code</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> draw():
+  ellipse(mouseX, mouseY, <span class="dv">20</span>, <span class="dv">20</span>)</code></pre></div>
+</section><section id="links" class="slide level2">
+<h1>Links</h1>
+<ul>
+<li>http://www.python-processing-arduino.de/</li>
+<li>axel.duerkop@tuhh.de</li>
+<li><span class="citation" data-cites="xldrkp">@xldrkp</span></li>
+<li>github.com/xldrkp</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="./bower_components/reveal.js/lib/js/head.min.js"></script>
+  <script src="./bower_components/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: './bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: './bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: './bower_components/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
