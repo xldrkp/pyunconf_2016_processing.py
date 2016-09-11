@@ -70,10 +70,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <h3 class="date">Pyunconf Sep 10, 2016</h3>
 </section>
 
+<section><section id="teaching-and-learning-how-to-code" class="titleslide slide level1"><h1>Teaching And Learning How To Code</h1></section><section id="the-group" class="slide level2">
+<h1>The Group</h1>
+<ul>
+<li><em>Medientechnik</em> and <em>Elektrotechnik</em> students</li>
+<li>Their intention: becoming teachers in vocational training (Berufsschullehrer_innen)</li>
+</ul>
+</section><section id="format" class="slide level2">
+<h1>Format</h1>
+<ul>
+<li>Two semesters <em>Introduction to Informatics</em></li>
+<li>My intention: introduce them to basic programming skills</li>
+</ul>
+<figure>
+<img src="./abb/Auswahl_115.png" alt="Python as a &quot;lingua franca&quot;" /><figcaption>Python as a &quot;lingua franca&quot;</figcaption>
+</figure>
+<p><small>Quelle: Axel Dürkop, Seminarkonzept &quot;Einführung in die Informatik, iTBH, TUHH&quot;</small></p>
+</section></section>
 <section><section id="learning-python-with-processing" class="titleslide slide level1"><h1>Learning Python with Processing</h1></section><section id="processing" class="slide level2">
 <h1>Processing</h1>
 <ul>
-<li>https://processing.org/</li>
+<li><a href="https://processing.org/">Processing</a> website</li>
 <li>IDE for easily developing artistic programms</li>
 <li>Code usually being compiled to Java</li>
 </ul>
@@ -113,14 +130,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </figure>
 </section><section id="processing.py-example" class="slide level2">
 <h1>Processing.py Example</h1>
-<figure>
-<img src="./abb/Auswahl_106.png" alt="The two main functions" /><figcaption>The two main functions</figcaption>
-</figure>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> draw():
+  ellipse(mouseX, mouseY, <span class="dv">20</span>, <span class="dv">20</span>)</code></pre></div>
 </section></section>
 <section><section id="arduino" class="titleslide slide level1"><h1>Arduino</h1></section><section id="hardware" class="slide level2">
 <h1>Hardware</h1>
 <figure>
-<img src="./abb/arduino-uno-flickr-snootlab.jpg" alt="Arduino Uno Board, Arduino Uno by Snootlab CC-BY 2.0" /><figcaption>Arduino Uno Board, Arduino Uno by <a href="https://www.flickr.com/photos/snootlab/">Snootlab</a> <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY 2.0</a></figcaption>
+<img src="./abb/arduino-uno-flickr-snootlab.jpg" alt="Arduino Uno by Snootlab CC-BY 2.0" /><figcaption>Arduino Uno by <a href="https://www.flickr.com/photos/snootlab/">Snootlab</a> <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY 2.0</a></figcaption>
 </figure>
 </section><section class="slide level2">
 
@@ -160,11 +176,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Once transfered like a normal sketch to the Arduino</li>
 <li>Serial communication (via USB) from the host computer using Processing.py</li>
 </ul>
-</section><section class="slide level2">
-
-<figure>
-<img src="./abb/workflow.png" alt="Communication with Arduino" /><figcaption>Communication with Arduino</figcaption>
-</figure>
 </section><section id="api" class="slide level2">
 <h1>API</h1>
 <ul>
@@ -176,6 +187,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>analogWrite(pin, value)</code></li>
 <li><code>servoWrite(pin, value)</code></li>
 </ul>
+</section><section id="processing.py-arduino" class="slide level2">
+<h1>Processing.py » Arduino</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># This is Python code in Processing</span>
+
+add_library(<span class="st">&#39;serial&#39;</span>)
+add_library(<span class="st">&#39;arduino&#39;</span>)
+
+led <span class="op">=</span> <span class="dv">13</span>
+
+<span class="kw">def</span> setup():
+    a <span class="op">=</span> Arduino(this, <span class="st">&#39;/dev/ttyACM1&#39;</span>, <span class="dv">57600</span>)
+    a.pinMode(led, Arduino.OUTPUT)
+    a.digitalWrite(led, Arduino.HIGH)
+
+<span class="kw">def</span> draw():
+    <span class="cf">pass</span></code></pre></div>
 </section></section>
 <section><section id="why-not-pygame" class="titleslide slide level1"><h1>Why not PyGame?</h1></section><section id="pygame" class="slide level2">
 <h1>PyGame</h1>
